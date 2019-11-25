@@ -1,0 +1,80 @@
+<!--
+  ~ Copyright 2018 The app Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:iconSpaceReserved="false">
+
+    <PreferenceCategory
+        app:key="theme_category"
+        app:title="@string/pref_title"
+        android:layout="@layout/font_layout">
+        <ListPreference
+            app:iconSpaceReserved="false"
+            app:key="themePref"
+            app:title="@string/pref_header"
+            app:defaultValue="default"
+            app:dialogTitle="Choose theme"
+            android:negativeButtonText=""
+            app:entries="@array/themeListArray"
+            app:entryValues="@array/themeEntryArray"
+            app:useSimpleSummaryProvider="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:iconSpaceReserved="false"
+        app:key="help_category"
+        app:title="@string/pref_help_header">
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="feedPref"
+            app:summary="@string/pref_feed_subtitle"
+            app:title="@string/pref_feed_header">
+            <intent
+                android:action="android.intent.action.SENDTO"
+                android:data="mailto:drewstephensdesigns@gmail.com">
+                <extra android:name="android.intent.extra.SUBJECT"
+                    android:value="App Feedback"/>
+            </intent>
+        </Preference>
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="ratePref"
+            app:title="@string/pref_rate_header"
+            android:summary="@string/pref_rate_summary">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://play.google.com/store/apps/details?id=com.threetwentyfivedesigns.tickerio&amp;hl=en_US">
+                <extra android:name="android.intent.extra.SUBJECT"
+                    android:value="App Feedback"/>
+            </intent>
+        </Preference>
+
+        <Preference
+            app:iconSpaceReserved="false"
+            app:key="ratePref"
+            app:title="@string/pref_github_header"
+            android:summary="@string/pref_github_subtitle">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="https://github.com/ds-designs">
+                <extra android:name="android.intent.extra.SUBJECT"
+                    android:value="App Feedback"/>
+            </intent>
+        </Preference>
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>

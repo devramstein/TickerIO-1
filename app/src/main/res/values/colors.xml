@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Light Theme -->
+    <color name="primary">#044F6B</color>
+    <color name="secondary">#044F6B</color>
+    <color name="error">#E53935</color> <!-- Red 600 -->
+    <color name="darkTextColor">#DEDEDE</color>
+    <color name="accent">#33A4C3</color>
+    <color name="colorOnBackground">#044F6B</color>
+
+</resources>

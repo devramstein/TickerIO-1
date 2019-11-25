@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".activities.MainActivity"
+    tools:showIn="@layout/activity_main">
+
+
+    <TextView
+        android:id="@+id/zuluClockHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/zulu_time"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- // Zulu Time Clock -->
+    <TextClock
+        android:id="@+id/zuluClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:timeZone="UTC"
+        android:format12Hour="HH:mm:ss a"
+        android:text="@string/time_holder"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="@id/zuluClockHeader"
+        app:layout_constraintStart_toStartOf="@id/zuluClockHeader"
+        app:layout_constraintTop_toBottomOf="@id/zuluClockHeader"/>
+
+    <!-- // Local Clock Header -->
+    <TextView
+        android:id="@+id/localClockHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/local_time"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/zuluClock"
+        app:layout_constraintStart_toStartOf="@id/zuluClock"
+        app:layout_constraintTop_toBottomOf="@id/zuluClock" />
+
+    <!-- // Local Time Clock -->
+    <TextClock
+        android:id="@+id/localClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="40sp"
+        android:fontFamily="sans-serif-medium"
+        android:format12Hour="hh:mm:ss a"
+        android:text="@string/time_holder"
+        app:layout_constraintEnd_toEndOf="@id/localClockHeader"
+        app:layout_constraintStart_toStartOf="@id/localClockHeader"
+        app:layout_constraintTop_toBottomOf="@id/localClockHeader"/>
+
+    <!-- // Julian Dates Header -->
+    <TextView
+        android:id="@+id/julianDateHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/julianDates"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/localClock"
+        app:layout_constraintStart_toStartOf="@id/localClock"
+        app:layout_constraintTop_toBottomOf="@id/localClock" />
+
+    <!-- // Zulu Julian Date -->
+    <TextView
+        android:id="@+id/julianDateZulu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/julianDateHeader"
+        app:layout_constraintStart_toStartOf="@id/julianDateHeader"
+        app:layout_constraintTop_toBottomOf="@id/julianDateHeader"/>
+
+    <!-- // Local Julian Date -->
+    <TextView
+        android:id="@+id/julianDateLocal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:layout_marginTop="0dp"
+        app:layout_constraintEnd_toEndOf="@id/julianDateZulu"
+        app:layout_constraintStart_toStartOf="@id/julianDateZulu"
+        app:layout_constraintTop_toBottomOf="@id/julianDateZulu"/>
+
+    <!-- Welcome Message -->
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginStart="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="bottom|center"
+        android:text="Ghllhl"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/viewline"
+        app:layout_constraintEnd_toEndOf="@id/viewline"/>
+
+    <!-- Footer // Shows User Location -->
+    <View
+        android:id="@+id/viewline"
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/accent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@id/location"
+        app:layout_constraintEnd_toEndOf="@id/location"/>
+
+    <!-- Time Zone Location -->
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_marginBottom="35dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/currLocation"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Current Time Zone -->
+    <TextView
+        android:id="@+id/timezone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/currTimeZone"
+        android:textSize="17sp"
+        app:layout_constraintEnd_toEndOf="@+id/location"
+        app:layout_constraintStart_toStartOf="@+id/location"
+        app:layout_constraintTop_toBottomOf="@+id/location" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
